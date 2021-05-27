@@ -37,7 +37,8 @@ module.exports =({ develop })=>({
             test: /\.[tj]s$/,
             use: 'ts-loader',
             exclude: /node_modules/,
-            },
+
+        },
             {
                 test: /\.(woff(2)?|eot|ttf|otf)$/i,
                 type: 'asset/resource',
