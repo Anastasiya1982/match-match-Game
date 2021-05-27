@@ -1,0 +1,37 @@
+button{
+  border: none;
+}
+
+button:focus{
+  outline: none;
+}
+.btn{
+  background-color: #f30398;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fafafa;
+  font-family: cursive;
+}
+.btn.active{
+  background-color: #f327d3;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fafafa;
+
+}
+.btn.register{
+  margin-right: 20px;
+}
+.btn.register.hidden{
+  margin-right: 20px;
+  display: block;
+}
+
+.btn.start-game{
+  margin-right: 20px;
+  display: none;
+}
+.btn.start-game.show{
+  margin-right: 20px;
+  display: block;
+}

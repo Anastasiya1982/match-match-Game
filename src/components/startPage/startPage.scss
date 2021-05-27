@@ -1,0 +1,160 @@
+.start-page {
+  background: #202736;
+  background: linear-gradient(to bottom, #181d23 0%, #202736 80%);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  min-height:87vh;
+  margin: 0 auto;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    position: fixed;
+    background: url("https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true") fixed;
+    width: 98%;
+    height: 85%;
+    z-index: -1;
+    opacity: 0;
+    animation: stars-move-in 1000ms 300ms forwards;
+  }
+
+
+  &__forest {
+    position: absolute;
+    bottom:2px;
+    left: 0;
+    background: url("../../assets/startPageImg/Trees.svg") bottom left repeat-x;
+    background-size: cover;
+    width: 100%;
+    height: 80%;
+    opacity: 0;
+    animation: forest-move-in 1000ms 500ms forwards;
+    border-bottom: 2px solid #181d23;
+  }
+
+
+  &__silhouette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url("../../assets/startPageImg/Silhouette.svg");
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 50%;
+    opacity: 0;
+    animation: silhouette-move-in 1000ms 800ms forwards;
+  }
+
+
+  &__moon {
+    top: 125px;
+    right: 0;
+    position: fixed;
+    background-size: 30% 30%;
+    background-image: url("../../assets/startPageImg/Moon.svg");
+    background-position: right;
+    background-repeat: no-repeat;
+    //no-repeat fixed right 150%;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    animation: moon-move-in 1.2s 1s forwards;
+  }
+
+
+  &__container {
+    width: fit-content;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 35%;
+    left: 55%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: text-fade-in 1000ms 800ms forwards;
+  }
+
+
+  &__container > h1 {
+    font-size: 65px;
+    font-weight: normal;
+    font-style: italic;
+    color: #fafafa;
+    line-height: 65px;
+  }
+
+  &__btn:focus {
+    outline: none;
+  }
+
+  &__btn:active {
+    background: #ff626c;
+    transition: background 0s;
+    box-shadow: inset 1px 1px 10px -1px
+  }
+
+  &__btn {
+    margin: 40px auto;
+    background: #f300b4;
+    padding: 18px 20px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    color: #fafafa;
+    font-weight: 700;
+  }
+}
+
+
+@keyframes stars-move-in {
+  from {
+    background-position-y: -100px;
+  }
+  to {
+    opacity: 1;
+    background-position-y: 0;
+  }
+}
+@keyframes forest-move-in {
+  from {
+    background-position-y: 150%;
+  }
+  to {
+    opacity: 1;
+    background-position-y: 100%;
+  }
+}
+
+@keyframes silhouette-move-in {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    opacity: 1;
+    background-position-x: 50%;
+  }
+}
+@keyframes moon-move-in {
+  from {
+    opacity: 0;
+    background-position: right 150%;
+  }
+  to {
+    opacity: 1;
+    background-position: top right;
+  }
+}
+@keyframes text-fade-in {
+  from {
+    right: 0;
+  }
+  to {
+    opacity: 1;
+    right: 25%;
+  }
+}
+
+
