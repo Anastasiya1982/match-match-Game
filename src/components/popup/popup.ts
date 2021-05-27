@@ -17,7 +17,7 @@ export class Popup extends BaseComponent {
         super('div', ['modal']);
         this.modalTitle = title;
         this.content = content;
-        this.closeButton = new Button(this.element, {default: 'btn',active:'btn active'}, 'Close');
+        this.closeButton = new Button(this.element, {default: 'btn',active:'btn active'}, 'Close',false);
        this.registerForm=new RegisterForm();
         this.element.innerHTML = `  
    <div class="modal-content">     

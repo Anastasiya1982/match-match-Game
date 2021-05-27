@@ -23,12 +23,12 @@ export class Header extends BaseComponent{
 
      constructor() {
          super('div', [ 'header' ]);
-         this.registerButton = new Button(this.element,{default:'btn  register',active:'btn active',name:'registerBtn'},'Register');
-         this.startGameButton = new Button(this.element,{default:'btn  start-game ',active:'btn active',name:'startGameBtn'},'Start Game')
-         this.settingsButton=new Button(this.element,{default:'btn ',active:'btn active',name:'settingsBtn'},'Settings')
-         this.aboutPageButton = new Button(this.element,{default:'btn  about',active:'btn active',name:'about'},'About Page') ;
-         this.homePageButton = new Button(this.element,{default:'btn  home',active:'btn active',name:'home'},'Home Page') ;
-        this.bestScoreButton=new Button(this.element,{default:'btn  best',active:'btn active',name:'best'},'Best Score') ;
+         this.registerButton = new Button(this.element,{default:'btn  register',active:'btn active',name:'registerBtn'},'Register',false);
+         this.startGameButton = new Button(this.element,{default:'btn  start-game ',active:'btn active',name:'startGameBtn'},'Start Game',false)
+         this.settingsButton=new Button(this.element,{default:'btn ',active:'btn active',name:'settingsBtn'},'Settings',false)
+         this.aboutPageButton = new Button(this.element,{default:'btn  about',active:'btn active',name:'about'},'About Page',false) ;
+         this.homePageButton = new Button(this.element,{default:'btn  home',active:'btn active',name:'home'},'Home Page',false) ;
+        this.bestScoreButton=new Button(this.element,{default:'btn  best',active:'btn active',name:'best'},'Best Score',false) ;
       //присваисваем  дата атрибут//
          this.element.append(this.aboutPageButton.node,this.settingsButton.node,this.registerButton.node,this.startGameButton.node);
         this.aboutPageButton.node.setAttribute('href','/about');
@@ -57,9 +57,9 @@ export class Header extends BaseComponent{
         this.homePageButton.onClick=()=>{
             this.routing._locationResolver('/');
         }
-        this.startGameButton.onClick=()=>{
-            this.routing._locationResolver('/start')
-        }
+        // this.startGameButton.onClick=()=>{
+        //        // this.gamePage.start()
+        // }
         this.bestScoreButton.onClick=()=>{
             this.routing._locationResolver('/bestScore')
         }

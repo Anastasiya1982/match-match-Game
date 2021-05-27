@@ -30,7 +30,7 @@ export class Game extends BaseComponent {
         this.cardsField = new CardsField();
         this.gameTimer = new GameTimer();
         // this.buttonStop = new Button();
-        this.finishButton=new Button(this.element,{default:"finish-btn",active:"finish-btn-active"});
+        this.finishButton=new Button(this.element,{default:"finish-btn",active:"finish-btn-active"},"Play again",false);
         this.popup = new Popup('Congratulation! You WIN !!!','To try again!');
         this.element.append(this.cardsField.element, this.gameTimer.element, this.popup.element
            // this.buttonStop.element

@@ -10,19 +10,22 @@ export class RegisterForm extends BaseComponent{
     nameInput: HTMLInputElement | null;
     lastNameInput: HTMLInputElement | null;
     emailInput: HTMLInputElement | null;
-    // userInfo: User;
+    // user: User;
     isSubmit:Boolean;
 
     constructor() {
         super('form', ['register-form']);
-        this.submitButton = new Button(this.element, {default: "btn", active: 'btn active'}, 'Submit');
+        this.submitButton = new Button(this.element, {default: "btn", active: 'btn active'}, 'Submit',true);
         this.nameInput = this.element.querySelector('#name');
         this.lastNameInput = this.element.querySelector('#lastName');
         this.emailInput = this.element.querySelector('#email');
         this.isSubmit=false;
 
         this.submitButton.onClick = () => {
-              this.getObject();
+            this.validationOnLetters();
+            if(this.validationOnLetters()){
+                this.getObject();
+            }
               this.isSubmit=true;
            alert("You are registrated. you can start  the game")
 
@@ -45,7 +48,6 @@ export class RegisterForm extends BaseComponent{
         this.emailInput = this.element.querySelector('#email');
         return this.emailInput?.value;
     }
-
 
     setError(err: string | null) {
         if (err === null) {
@@ -87,13 +89,24 @@ export class RegisterForm extends BaseComponent{
             </div>`;
 
         this.element.append(this.submitButton.node);
+
         return this.element;
     }
 
 
     //Validation
-    validateLength(){
-
+  validationOnLetters(){
+        const letters = /^[A-Za-zА-я]+$/;
+        if(this.nameInput?.value.match(letters))
+        {
+            return true;
+        }
+        else
+        {
+           this.nameInput?.focus();
+        alert("name should be only letters")
+           return false;
+        }
     }
 }
 

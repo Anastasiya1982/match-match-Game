@@ -28,6 +28,11 @@ export  class App {
         this.rootElement.appendChild(this.header.element);
         this.rootElement.appendChild(this.wrapper.element)
         this.wrapper.element.appendChild(this.startPage.element);
+        this.header.startGameButton.onClick=()=>{
+            this.wrapper.element.innerHTML='';
+            this.wrapper.element.appendChild(this.gamePage.element);
+            this._gameInit()
+        }
     }
 
         _gameInit(){

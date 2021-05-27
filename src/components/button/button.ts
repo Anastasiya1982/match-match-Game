@@ -4,15 +4,17 @@ import {IButtonStyleInterface} from "../../models/button-category-model";
 
 
 export class Button extends Control {
+    private disabled?:Boolean;
     private state?: Boolean;
     private styles: IButtonStyleInterface;
     public  onSelect: ((textContent:string) => void) | undefined;
     public onClick: (() => void) | undefined;
     public onChange: ((state: Boolean) => void) | undefined;
 
-    constructor(parentNode: HTMLElement | null, styles: IButtonStyleInterface, caption: string = '') {
+    constructor(parentNode: HTMLElement | null, styles: IButtonStyleInterface, caption: string = '',disabled:boolean) {
         super(parentNode, 'button', styles.default, caption);
         this.styles = styles;
+        this.disabled=disabled;
         this.node.onclick = () => {
             this.setState();
             if (this.node.textContent != null) {

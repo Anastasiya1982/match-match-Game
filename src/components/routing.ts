@@ -111,10 +111,10 @@ export class Routing {
                </div>`
                 break;
             case '/start':
-                if(container)container.innerHTML=`
-               <div class="game-page">
-               ${this.aboutPage.element.innerHTML}
-               </div>`
+               //  if(container)container.innerHTML=`
+               // <div class="game-page">
+               // ${this.gamePage.element.innerHTML}
+               // </div>`
                 break;
         }
     }
